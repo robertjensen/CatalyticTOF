@@ -2,7 +2,7 @@ import matplotlib
 from scipy import optimize
 import math
 #matplotlib.use('svg')
-#matplotlib.use('Agg')
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 import MySQLdb
@@ -18,23 +18,38 @@ except:
 
 cursor = db.cursor()
 
+fig = plt.figure()
+fig.subplots_adjust(bottom=0.2) # Make room for x-label
+ratio = 0.4                     # This figure should be very wide to span two columns
+fig_width = 10
+fig_width = fig_width /2.54     # width in cm converted to inches
+fig_height = fig_width*ratio
+fig.set_size_inches(fig_width,fig_height)
+
+
 #Relevant time, OH: 12.418, NH3: 12.427
 data = {}
 cursor.execute("SELECT x*1000000,y*1000 FROM xy_values_tof where measurement = 245")
-data['tof'] = np.array(cursor.fetchall())
+Data = np.array(cursor.fetchall())
 
 masses = []
 masses.append(['OH',12.418,6])
 masses.append(['NH3',12.427,6])
 
+fit = []
 
+#X_range = Data[24600:25000,0]
+X_range = np.arange(12.405,12.44,0.0001)
+
+i = 0
+axis = fig.add_subplot(1,1,1)
 for mass in masses:
     i = i + 1
-    axis = pdffig.add_subplot(4,3,i)
+    
     center = (int)(mass[1] * 2000) ## Notice... 
     center_mass = mass[1]
-    Start = center -40 #Display range
-    End = center + 40
+    Start = center -50 #Display range
+    End = center + 50
     start = center - mass[2] #Fitting range
     end = center + mass[2]
 
@@ -58,51 +73,21 @@ for mass in masses:
         print "p1:" + str(p1[0]) + " p1:" + str(p1[1]) + " p2:" + str(p1[2]) + " j: " + str(j)
         p1[1] = 0
 
-    axis.plot(X_values,Y_values,'b-')
-    axis.plot([Data[start,0],Data[start,0]],[0,max(y_values)],'k-')
-    axis.plot([Data[end,0],Data[end,0]],[0,max(y_values)],'k-')
-
-    axis.plot(X_values,fitfunc(p1, X_values),'r-')
-    axis.tick_params(direction='in', length=2, width=1, colors='k',labelsize=8,axis='both',pad=5)
-    axis.annotate(mass[0], xy=(.05,.85), xycoords='axes fraction',fontsize=8)
-    axis.set_xticks(())
     
-    charge = 0
-    treated_data[mass[0]][j][0] = config.temperatures[j]
-    treated_data[mass[0]][j][1] = math.sqrt(math.pi)*p1[0] * math.sqrt(p1[1])
+    axis.plot(X_range,fitfunc(p1, X_range),'r--',linewidth=1.1)
+    fit.append(fitfunc(p1, X_range))
 
 
-
-
-colors = ['ro-','bo-','go-','co-','mo-','yo-','r*-','b*-','g*-']
-fig = plt.figure()
-axis = fig.add_subplot(2,1,1)
-fig.subplots_adjust(hspace=0.3)
-
-i = 0
-for mass in config.masses:    
-    axis.plot(treated_data[mass[0]][:,0],treated_data[mass[0]][:,1], colors[i],label=mass[0])
-    i = i + 1
-    
-    
-axis.set_ylabel('Response / mV$\cdot$s', fontsize=14)
-axis.set_xlabel('Temperature', fontsize=14)
-axis.legend()
-axis = fig.add_subplot(2,1,2)
-i = 0
-for mass in config.masses:    
-    axis.plot(treated_data[mass[0]][:,1], colors[i],label=mass[0])
-    i = i + 1
-
-axis.set_xlabel('Tentative time', fontsize=14)
-axis.set_ylabel('Response / mV$\cdot$s', fontsize=14)
-
-axis2 = axis.twinx()
-axis2.plot(treated_data[mass[0]][:,0], 'k.',label='Temperature')
-axis2.set_ylabel('Temperature / C', fontsize=14)
-
-axis.legend()
+axis.plot(X_range,fit[0]+fit[1],'g-',linewidth=0.5)
+axis.plot(X_values,Y_values,'b.',markersize=1.5)
+axis.tick_params(direction='in', length=2, width=1, colors='k',labelsize=8,axis='both',pad=5)
+axis.set_yticks((20,40,60))    
+axis.set_xticks((12.41,12.42,12.43,12.44))    
+axis.ticklabel_format(useOffset=False)
+axis.set_xlim(12.405,12.44)
+axis.set_ylabel('Response / mV', fontsize=8)
+axis.set_xlabel('Flight Time / $\mu$s', fontsize=8)
 
 #plt.tight_layout()
-plt.show()
-#plt.savefig('../svg_figures/oscillations_gas_dependence.svg')
+#plt.show()
+plt.savefig('../ammonia_OH_gauss_fit.png',dpi=300)
