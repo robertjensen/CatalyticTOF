@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 \usepackage{graphicx}
 \usepackage{caption}
 
@@ -14,15 +14,16 @@ We demonstrate that high resolution time of flight mass spectrometry can be succ
 \end{abstract}
 
 \section{Introduction}
-Something about the relevance of this system. Catalysis is interesting because... Typical problems with QMS approach. 
+In heterogeneous catalysis the optimization and development of equipment is important both to minimize the cost of equipment but also to be able to study complicated systems. As a platform for testing heterogeneous catalysts microfabricated reactors or microreactors have been found suitable due to both the high surface-to-volume ratio, the fast temperature response and minimization of thermal and concentration gradients. Such a platform have among other places been developed in our department \cite{Henriksen2009}. However, a suitable reactor platform is only part of the task. Typically, quadrupole mass spectrometers (QMSs) are used in low pressure regimes to analyze gas composition while gas chromatographs are used for high pressure measurements. The QMS, however, suffer from a low mass resolution ($\Delta$m/m$\sim$200) which makes analysis of complicated spectra difficult and cumbersome and a low mass range (typically up to $\sim$500\,amu). Furthermore, QMSs are typically operated by logging a single (or a few) masses as a function of time to increase the time resolution. This in turn is on the expense of being unable to acquire full mass spectra continuously. Something negative about chromatographs... As an alternative time of flight mass spectrometers (TOF-MS) offer both high mass resolution ($\Delta$m/m$>$400) and fast acquisition of full mass spectra ($>$1\,Hz) along with mass range only limited by the detector. For a typical microchannel plate (MCP) a mass range of (0--5000\,amu) can be obatined Until now, to our knowlegde, the testing of catalysts in a microreactor with subsequent gas analysis by a TOF-MS have not been demonstrated. Here we desribe a microreactor and TOF-MS system which combines the high sensitivity of microreactors and the high mass resolution TOF-MSs for use in heterogeneous catalysis.
 
 \section{System design}
-The complete system enables high sensitivity reactivity measurements of the catalyst under investigation combined with high resolution mass spectrometry. The catalyst under investigation is deposited in a microcreactor from where the products are detected with time of flight mass spectrometry. A schematic of the entire setup is shown in Figure \ref{fig:TOF_microreactor}
+The complete system enables high sensitivity reactivity measurements of the catalyst under investigation combined with high resolution mass spectrometry. The catalyst under investigation is deposited in a microreactor from where the products are detected with time of flight mass spectrometry. A schematic of the entire setup is shown in Figure \ref{fig:TOF_microreactor}
 \begin{center}
 	\includegraphics[scale=0.60]{TOF_microreactor.png}
 	\captionof{figure}{Schematic of the total system (not to scale)}
 	\label{fig:TOF_microreactor}
 \end{center}
+Three setup consists of three main components. The microreactor where the catalyst under investigation is deposited, an ionization source which ionizes the gas from the microreactor and the TOF equipment used for gas analysis. 
 
 \subsection{Microreactor and gas handling}
 
@@ -39,7 +40,7 @@ The two gas inlets on the microreactor chip is connected to a gas handling syste
 The time of flight equipment used for detection of gas molecules flowed through the capillary of the microreactor is designed as an orthogonal mass spectrometer. Ionized ions enter the source through a series of Einzel lenses used for focusing the beam minimizing divergence. In the source they are pushed into the flight tube by an the initial push voltage, V$_p$. The ions are further accelerated from ground potential to the liner potential, V$_L$, which is the drift voltage of the flight tube. At the end of the flight tube a reflectron is installed which have two primary purposes. The effective drift length is increased hence increasing resolution of the equipment. The reflectron also works as a focusing lens compensating for any initial velocity dispersion of the ions, i.e. ions with an initial higher velocity will have an increased flight length compared to slower ions. The microchannel plate (MCP) used for detection is placed in the focal point of the reflectron giving maximum compensation for initial velocity dispersion. The theoretical resolution of the equipment is $\Delta$m/m$\sim$4000.
 
 \subsubsection{Ionization of gas}
-As ionization source of the gas flow from the microreactor capillary an modified Bayard-Alpert ion gauge is used. 
+As ionization source of the gas flow from the microreactor capillary an modified nude UHV Bayard-Alpert ion gauge is used. Approximately 3\,A is run through the filament resulting in approximately 10\,mA emission current. The grid is biased approximately 40\,V negative compared to the filament to accelerate electrons emitted from the filament towards the grid. Contrary to standard operation of a ion gauge the collector in the center of the grid is short-circuited to grid to ensure homogeneous field distribution within the grid. To allow ionized ions to escape from the grid the lid of the grid have been removed. Using this configuration approximately half of the ionized ions are expected to leave the ionization gauge. The entire construction is placed in a nozzle which is differentially pumped. Large amounts of gases can hence be dosed locally around the ion gauge while still maintaining a low pressure in the source region of the TOF. The nozzle is essential in the setup to avoid high pressure in the source region resulting in a increase in dead counts on the MCP thus decreasing the noise to signal ratio of the recorded signal.
 
 \section{Test system}
 Ammonia oxidation
