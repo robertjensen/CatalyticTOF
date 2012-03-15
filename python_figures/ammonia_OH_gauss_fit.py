@@ -8,6 +8,12 @@ import numpy as np
 import MySQLdb
 import sys
 
+def TimeToMass(time):
+    #time = 2.97277909899 * mass^0.499352719883
+    corr_time = time - 0.183  #Approximate delay
+    mass = (corr_time / 2.97277909899)**(1.0/0.499352719883)
+    return mass
+
 matplotlib.rc('text',usetex=True) # Magic fix for the font warnings
 
 try:
@@ -20,6 +26,7 @@ cursor = db.cursor()
 
 fig = plt.figure()
 fig.subplots_adjust(bottom=0.2) # Make room for x-label
+fig.subplots_adjust(top=0.8) # Make room for extra x-label
 ratio = 0.4                     # This figure should be very wide to span two columns
 fig_width = 10
 fig_width = fig_width /2.54     # width in cm converted to inches
@@ -80,13 +87,30 @@ for mass in masses:
 
 axis.plot(X_range,fit[0]+fit[1],'g-',linewidth=0.5)
 axis.plot(X_values,Y_values,'b.',markersize=1.5)
-axis.tick_params(direction='in', length=2, width=1, colors='k',labelsize=8,axis='both',pad=5)
+axis.tick_params(direction='in', length=2, width=1, colors='k',labelsize=8,axis='both',pad=3)
 axis.set_yticks((20,40,60))    
 axis.set_xticks((12.41,12.42,12.43,12.44))    
 axis.ticklabel_format(useOffset=False)
 axis.set_xlim(12.405,12.44)
 axis.set_ylabel('Response / mV', fontsize=8)
 axis.set_xlabel('Flight Time / $\mu$s', fontsize=8)
+
+
+arrow = dict(facecolor='black',arrowstyle='->')
+font = 8
+axis.annotate('OH', xy=(12.416, 60),  xycoords='data', xytext=(12.41, 50), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
+axis.annotate('NH$_3$', xy=(12.428, 40),  xycoords='data', xytext=(12.433, 50), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
+
+
+
+axis3 = axis.twiny()
+axis3.plot(TimeToMass(X_range),X_range*0,'w-',linewidth=0) #Hack to create an invisible set on the extra x-axis
+axis3.set_xlim(TimeToMass(12.405),TimeToMass(12.44))
+#axis3.set_xticks((12.41,12.42,12.43,12.44))    
+axis3.set_xlabel('Mass / AMU', fontsize=8)
+axis3.tick_params(direction='in', length=2, width=1, colors='k',labelsize=8,axis='both',pad=3)
+axis3.ticklabel_format(useOffset=False)
+
 
 #plt.tight_layout()
 #plt.show()
