@@ -90,11 +90,25 @@ The two gas inlets on the microreactor chip is connected to a gas handling syste
 \subsection{Time of flight}
 The time of flight equipment used for detection of gas molecules flowed through the capillary of the microreactor is designed as an orthogonal mass spectrometer. Ionized ions enter the source through a series of Einzel lenses used for focusing the beam minimizing divergence. In the source they are pushed into the flight tube by an the initial push voltage, V$_p$. The ions are further accelerated from ground potential to the liner potential, V$_L$, which is the drift voltage of the flight tube. At the end of the flight tube a reflectron is installed which have two primary purposes. The effective drift length is increased hence increasing resolution of the equipment. The reflectron also works as a focusing lens compensating for any initial velocity dispersion of the ions, i.e. ions with an initial higher velocity will have an increased flight length compared to slower ions. The microchannel plate (MCP) used for detection is placed in the focal point of the reflectron giving maximum compensation for initial velocity dispersion. The theoretical resolution of the equipment is $\Delta$m/m$\sim$4000.
 
+\begin{figure}
+ \includegraphics[width=14cm]{untreated_data.png}%
+ \caption{Untreated data from the TOF-MS showing methanol and air.\label{fig:untreated_data}}%
+\end{figure}
+
+
 \subsubsection{Ionization of gas}
 As ionization source of the gas flow from the microreactor capillary an modified nude UHV Bayard-Alpert ion gauge is used. Approximately 3\,A is run through the filament resulting in approximately 10\,mA emission current. The grid is biased approximately 40\,V negative compared to the filament to accelerate electrons emitted from the filament towards the grid. Contrary to standard operation of a ion gauge the collector in the center of the grid is short-circuited to grid to ensure homogeneous field distribution within the grid. To allow ionized ions to escape from the grid the lid of the grid have been removed. Using this configuration approximately half of the ionized ions are expected to leave the ionization gauge. The entire construction is placed in a nozzle which is differentially pumped. Large amounts of gases can hence be dosed locally around the ion gauge while still maintaining a low pressure in the source region of the TOF. The nozzle is essential in the setup to avoid high pressure in the source region resulting in a increase in dead counts on the MCP thus decreasing the noise to signal ratio of the recorded signal.
 
+\subsubsection{Data treatment}
+\begin{figure}
+ \includegraphics[width=14cm]{ammonia_OH_gauss_fit.png}%
+ \caption{Example of Gaussion fit to a double peak. Each gaussion yields the area of the respective component.\label{fig:gaussian_fit}}%
+\end{figure}
+
+
 \section{Test system}
 Ammonia oxidation
+
 
 \section{Summary}
 
