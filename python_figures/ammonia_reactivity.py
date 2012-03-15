@@ -84,7 +84,7 @@ for j in range(0,len(config.temperatures)):
         charge = 0
         treated_data[mass[0]][j][0] = config.temperatures[j]
         treated_data[mass[0]][j][1] = math.sqrt(math.pi)*p1[0] * math.sqrt(p1[1])
-    plt.savefig(pp, format='pdf')
+    #plt.savefig(pp, format='pdf')
     plt.close()
 pp.close()
 
@@ -98,19 +98,7 @@ fig_height = fig_width*ratio
 fig.set_size_inches(fig_width,fig_height)
 
 
-axis = fig.add_subplot(2,1,1)
-fig.subplots_adjust(hspace=0.3)
-
-i = 0
-for mass in config.masses:    
-    axis.plot(treated_data[mass[0]][:,0],treated_data[mass[0]][:,1], colors[i],label=mass[0])
-    i = i + 1
-    
-    
-axis.set_ylabel('Response / mV$\cdot$s', fontsize=14)
-axis.set_xlabel('Temperature', fontsize=14)
-axis.legend()
-axis = fig.add_subplot(2,1,2)
+axis = fig.add_subplot(1,1,1)
 i = 0
 for mass in config.masses:    
     axis.plot(treated_data[mass[0]][:,1], colors[i],label=mass[0])
