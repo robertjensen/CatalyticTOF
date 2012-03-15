@@ -11,9 +11,11 @@ for i in range(180,105,-5): #Note last value is not included
 
 print len(temperatures)
 """
+
 for i in range(100,185,5): #Note last value is not included
     temperatures = temperatures + [i]
 
+temperatures = temperatures + [190]
 
 for i in range(180,95,-5): #Note last value is not included
     temperatures = temperatures + [i]
