@@ -20,14 +20,12 @@ cursor = db.cursor()
 
 #Mass of methanol: 32.0262147
 #Mass of oxygen: 31.9898292
-def TimeToMass(time):
-    #time = 2.9870925856 * mass^0.497621653202
-    #corr_time = time - 0.183  #Approximate delay - not optimized for this spectrum
-    mass = (time / 2.9870925856)**(1.0/0.497621653202)
-    #mass = mass - 0.413085820678 # Approximate value, not optimized for this spectrum
-    return mass
+def MassToTime(mass):
+    time = 2.9870925856 * (mass**0.497621653202)
+    corr_time = time + 0.207
+    return corr_time
 
-print TimeToMass(20)
+
 data = {}
 #Methanol + oxygen
 cursor.execute("SELECT x*1000000,y*1000 FROM xy_values_tof where measurement = 170")
@@ -54,22 +52,21 @@ gs.update(wspace=0.2,hspace=0.2)
 axis = plt.subplot(gs[0, :])
 
 axis.plot(data['ch'][:,0], data['ch'][:,1], 'r-',linewidth=LINEWIDTH)
-#xticks = range(0,20,4)
-#axis.set_xticks((xticks))
 axis.set_ylim(0,20)
 axis.set_xlim(0,20)
+axis.set_xticks([2.5,5,7.5,10,12.5,15,17.5,20])
 
-
+mass_ticks = np.array([1,5,10,15,20,25,30,35,40])
 
 axis3 = axis.twiny()
-axis3.plot(TimeToMass(data['ch'][:,0]),data['ch'][:,0]*0,'w-',linewidth=0) #Hack to create an invisible set on the extra x-axis
-axis3.set_xlim(TimeToMass(0),TimeToMass(20))
-#axis3.set_xticks((12.41,12.42,12.43,12.44))    
+#axis3.plot(data['ch'][:,0],data['ch'][:,0]*0,'w-',linewidth=0) #Hack to create an invisible set on the extra x-axis
+axis3.set_xlim(0,20)
+print MassToTime(32.0262147)
+axis3.set_xticks(MassToTime(mass_ticks))
+axis3.set_xticklabels(mass_ticks)
 axis3.set_xlabel('Mass / AMU', fontsize=8)
 axis3.tick_params(direction='in', length=2, width=1, colors='k',labelsize=8,axis='both',pad=3)
-#xticks = range(0,50,5)
-#axis3.set_xticks((xticks))
-axis3.ticklabel_format(useOffset=False)
+#axis3.ticklabel_format(useOffset=False)
 
 axis.set_ylim(0,20)
 axis3.set_ylim(0,20)
@@ -93,6 +90,7 @@ axis.plot(data['ch'][:,0], data['ch'][:,1], 'r-',linewidth=LINEWIDTH)
 p = axis.axvspan(0, 1, facecolor='#26aaf7', alpha=0.25)
 axis.set_xlim(0,1)
 axis.set_ylim(0,40)
+axis.set_xticks([0.2,0.4,0.6,0.8])
 axis.tick_params(direction='in', length=6, width=1, colors='k',labelsize=8,axis='both',pad=3)
 
 
@@ -103,9 +101,13 @@ axis.set_yticks((0,1,2,3,4))
 axis.plot(data['ch'][:,0], data['ch'][:,1], 'r-',linewidth=LINEWIDTH)
 axis.set_xlim(12,13)
 axis.set_ylim(0,4)
+axis.set_xticks([12.2,12.4,12.6,12.8])
 axis.set_xlabel('Flight Time / $\mu$s', fontsize=8)
 p = axis.axvspan(11.45, 13, facecolor='#b6fa77', alpha=0.25)
 axis.tick_params(direction='in', length=6, width=1, colors='k',labelsize=8,axis='both',pad=3)
+axis.annotate('H$_2$O', xy=(12.75, 2.3),  xycoords='data', xytext=(12.65, 3.3), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
+axis.annotate('OH', xy=(12.4, 1),  xycoords='data', xytext=(12.6, 1.9), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
+axis.annotate('O', xy=(12.05, 0.9),  xycoords='data', xytext=(12.26, 1.4), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
 
 
 axis = plt.subplot(gs[1,2])
@@ -118,7 +120,6 @@ axis.set_xlim(16.94,17)
 axis.set_ylim(0,4)
 axis.tick_params(direction='in', length=6, width=1, colors='k',labelsize=8,axis='both',pad=3)
 axis.ticklabel_format(useOffset=False)
-
 axis.annotate('O$_2$', xy=(16.963, 2),  xycoords='data', xytext=(16.95, 3), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
 axis.annotate('CH$_3$OH', xy=(16.977, 1.2),  xycoords='data', xytext=(16.995, 2.4), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
 
