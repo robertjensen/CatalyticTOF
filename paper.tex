@@ -90,9 +90,11 @@ The two gas inlets on the microreactor chip is connected to a gas handling syste
 \subsection{Time of flight}
 The time of flight equipment used for detection of gas molecules flowed through the capillary of the microreactor is designed as an orthogonal mass spectrometer. Ionized ions enter the source through a series of Einzel lenses used for focusing the beam minimizing divergence. In the source they are pushed into the flight tube by an the initial push voltage, V$_p$. The ions are further accelerated from ground potential to the liner potential, V$_L$, which is the drift voltage of the flight tube. At the end of the flight tube a reflectron is installed which have two primary purposes. The effective drift length is increased hence increasing resolution of the equipment. The reflectron also works as a focusing lens compensating for any initial velocity dispersion of the ions, i.e. ions with an initial higher velocity will have an increased flight length compared to slower ions. The microchannel plate (MCP) used for detection is placed in the focal point of the reflectron giving maximum compensation for initial velocity dispersion. The theoretical resolution of the equipment is $\Delta$m/m$\sim$4000.
 
+
+In Figure \ref{fig:untreated_data} an example spectrum of a methanol and atmospheric air mixture is shown. Here both the high resolution is demonstrated by the resolved methanol and molecular which has a mass difference of 43\,milliamu.
 \begin{figure}
- \includegraphics[width=14cm]{untreated_data.png}%
- \caption{Untreated data from the TOF-MS showing methanol and air.\label{fig:untreated_data}}%
+ \includegraphics[width=16cm]{untreated_data.png}%
+ \caption{Raw data acquired from the TOF-MS in a gas mixture of methanol and atmospheric air. Subfigures show the three different regions of the spectrum. From the first subfigure a delay of the approximately 150\,ns can be seen which is due to delays in cables and rise time of the pulser. From the center subfigure it is evident that 1\,amu corresponds to approximately 350\,ns difference in flight time in our system. From the last subfigure the a zoom of the methanol and molecular oxygen (43\,milliamu mass difference) region is shown.\label{fig:untreated_data}}%
 \end{figure}
 
 
@@ -106,8 +108,12 @@ As ionization source of the gas flow from the microreactor capillary an modified
 \end{figure}
 
 
-\section{Test system}
-Ammonia oxidation
+\section{Oxidation of ammonia}
+To demonstrate the system capability ammonia oxidation on platinum thin films have been used as a test reaction. In a stoichiometric mixture of ammonia and molecular oxygen a clean combustion to molecular nitrogen and water is expected.
+\begin{equation}
+4NH_3+3O_2\rightarrow 2N_2 + 6H_2O
+\end{equation}
+This system is, however, difficult to monitor by a QMS due to the overlap of NH$_3$ which is a reactant and OH$^-$ which is a cracking product from H$_2$O which is a product. Specifically, hydroxyls (OH$^{+}$) from cracking of trace water in the system and the primary peak of ammonia (NH$_{3}^{+}$) is both detected at approximately m/q = 17. The mass resolution of a QMS is typically not adequate to separate the two contributions. Often a mass without cracking from either products or residue gas in the system is necessary to be able to detect the amount of ammonia in the system. Typically m/q=15 or m/q=8.5 is chosen to detect ammonia. The monitoring of other than the primary mass to charge ratio due to mass overlap is generally not wanted due to the lowering of the signal to noise ratio. This in turns affect the detection limit of the given mass. Due   
 
 
 \section{Summary}
