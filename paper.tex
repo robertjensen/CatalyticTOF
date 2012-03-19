@@ -109,12 +109,30 @@ As ionization source of the gas flow from the microreactor capillary an modified
 
 
 \section{Oxidation of ammonia}
-To demonstrate the system capability ammonia oxidation on platinum thin films have been used as a test reaction. In a stoichiometric mixture of ammonia and molecular oxygen a clean combustion to molecular nitrogen and water is expected.
+To demonstrate the system capability ammonia oxidation on platinum thin films have been used as a test reaction. The catalytic oxidation of ammonia can proceed in primarily three different routes.
 \begin{equation}
 4NH_3+3O_2\rightarrow 2N_2 + 6H_2O
+\label{eq:Pt_clean_combustion}
 \end{equation}
-This system is, however, difficult to monitor by a QMS due to the overlap of NH$_3$ which is a reactant and OH$^-$ which is a cracking product from H$_2$O which is a product. Specifically, hydroxyls (OH$^{+}$) from cracking of trace water in the system and the primary peak of ammonia (NH$_{3}^{+}$) is both detected at approximately m/q = 17. The mass resolution of a QMS is typically not adequate to separate the two contributions. Often a mass without cracking from either products or residue gas in the system is necessary to be able to detect the amount of ammonia in the system. Typically m/q=15 or m/q=8.5 is chosen to detect ammonia. The monitoring of other than the primary mass to charge ratio due to mass overlap is generally not wanted due to the lowering of the signal to noise ratio. This in turns affect the detection limit of the given mass. Due   
+\begin{equation}
+2NH_3+2O_2\rightarrow N_2O + 3H_2O
+\end{equation}
+\begin{equation}
+4NH_3+5O_2\rightarrow 4NO + 6H_2O
+\end{equation}
+For a clean combustion reaction pathway \ref{eq:Pt_clean_combustion} is preferred. This system is, however, difficult to monitor by a QMS due to the overlap of NH$_3$ and OH$^-$ which is a cracking product from H$_2$O. Specifically, hydroxyls (OH$^{+}$) from cracking of trace water in the system and the primary peak of ammonia (NH$_{3}^{+}$) is both detected at m/q = 17 in a QMS. The mass resolution of a QMS is typically not adequate to separate the two contributions. Often a mass without cracking from either products or residue gas in the system is used to be able to detect the amount of ammonia and water. In the case of ammonia m/q=15 or m/q=8.5 is typically chosen. The monitoring of other than the primary mass to charge ratio due to mass overlap is generally not wanted due to a lower signal to noise ratio of cracking masses. This in turns affect the detection limit of the given mass. Due the acquisition of entire mass spectra from mass instead of monitoring of individual masses the TOF-MS does is not limited to cracking masses resulting in higher signal to noise ratio spectra.
+\begin{figure}
+ \includegraphics[width=14cm]{ammonia_reactivity.png}%
+ \caption{Ammonia oxidation as a function of temperature on a Pt thin film. As the temperature is increased ammonia is oxidized to H$_2$O and N$_2$. Furthermore, the OH and NH$_3$ signal is anticorrelated demonstrating the ability to resolve these masses.\label{fig:ammonia_reactivity}}%
+\end{figure}
+In Figure \ref{fig:ammonia_reactivity} a number of masses as a function of time are shown. At experiment start the microreactor is equilibrated with a stoichiometric mix of NH$_3$ and O$_2$ (3:4). Hereafter the temperature is increased while TOF spectra are acquired. Spectra were acquired from triggering of the acceleration pulse up to 25\,$\mu$s of flight time corresponding to 70 amu in our system. 
 
+For ammonia oxidation both N$_2$O (m/q = 44), NO (m/q = 30) and NO$_2$ (m/q = 46) are of interest. 
+
+\begin{figure}
+ \includegraphics[width=14cm]{dynamic_range.png}%
+ \caption{Gaussian fits to three different mass to charge ratios from the same mass spectrum. As seen from the response a high dynamic range of the TOF-MS all yielding good gaussian fits. The TOF-MS can hence be used to monitor both very small and very large signal masses with high time resolution.\label{fig:dynamic_range}}%
+\end{figure}
 
 \section{Summary}
 
