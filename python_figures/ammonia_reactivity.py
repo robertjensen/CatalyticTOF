@@ -113,7 +113,7 @@ axis.set_yticks((0.5,1,1.5,2,2.5))
 
 arrow = dict(facecolor='black',arrowstyle='->')
 font = 8
-axis.annotate('H$_2$0', xy=(25, 2.3),  xycoords='data', xytext=(28, 2.8), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
+axis.annotate('H$_2$O', xy=(25, 2.3),  xycoords='data', xytext=(28, 2.8), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
 axis.annotate('N$_2$', xy=(20, 1.5),  xycoords='data', xytext=(17, 2), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
 axis.annotate('NH$_3$', xy=(14, 0.7),  xycoords='data', xytext=(18, 1.2), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
 axis.annotate('OH', xy=(24, 0.4),  xycoords='data', xytext=(23, 0.9), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
