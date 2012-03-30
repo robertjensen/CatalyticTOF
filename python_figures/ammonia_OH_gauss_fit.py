@@ -107,7 +107,7 @@ axis3 = axis.twiny()
 axis3.plot(TimeToMass(X_range),X_range*0,'w-',linewidth=0) #Hack to create an invisible set on the extra x-axis
 axis3.set_xlim(TimeToMass(12.405),TimeToMass(12.44))
 #axis3.set_xticks((12.41,12.42,12.43,12.44))    
-axis3.set_xlabel('Mass / AMU', fontsize=8)
+axis3.set_xlabel('Mass / amu', fontsize=8)
 axis3.tick_params(direction='in', length=2, width=1, colors='k',labelsize=8,axis='both',pad=3)
 axis3.ticklabel_format(useOffset=False)
 

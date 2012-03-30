@@ -64,7 +64,7 @@ axis3.set_xlim(0,20)
 print MassToTime(32.0262147)
 axis3.set_xticks(MassToTime(mass_ticks))
 axis3.set_xticklabels(mass_ticks)
-axis3.set_xlabel('Mass / AMU', fontsize=8)
+axis3.set_xlabel('Mass / amu', fontsize=8)
 axis3.tick_params(direction='in', length=2, width=1, colors='k',labelsize=8,axis='both',pad=3)
 #axis3.ticklabel_format(useOffset=False)
 
@@ -106,7 +106,7 @@ axis.set_xlabel('Flight Time / $\mu$s', fontsize=8)
 p = axis.axvspan(11.45, 13, facecolor='#b6fa77', alpha=0.25)
 axis.tick_params(direction='in', length=6, width=1, colors='k',labelsize=8,axis='both',pad=3)
 axis.annotate('H$_2$O', xy=(12.75, 2.3),  xycoords='data', xytext=(12.65, 3.3), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
-axis.annotate('OH', xy=(12.4, 1),  xycoords='data', xytext=(12.6, 1.9), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
+axis.annotate('OH', xy=(12.4, 1),  xycoords='data', xytext=(12.7, 1.8), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
 axis.annotate('O', xy=(12.05, 0.9),  xycoords='data', xytext=(12.26, 1.4), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
 
 
