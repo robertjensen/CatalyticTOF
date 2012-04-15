@@ -9,9 +9,8 @@ import MySQLdb
 import sys
 
 def TimeToMass(time):
-    #time = 2.97277909899 * mass^0.499352719883
-    corr_time = time - 0.183  #Approximate delay
-    mass = (corr_time / 2.97277909899)**(1.0/0.499352719883)
+    corr_time = time - 0.181  #Approximate delay
+    mass = (corr_time / 2.98660484819)**(1.0/0.4977024241071)
     return mass
 
 matplotlib.rc('text',usetex=True) # Magic fix for the font warnings
@@ -36,12 +35,13 @@ fig.set_size_inches(fig_width,fig_height)
 
 #Relevant time, OH: 12.418, NH3: 12.427
 data = {}
-cursor.execute("SELECT x*1000000,y*1000 FROM xy_values_tof where measurement = 245")
+#cursor.execute("SELECT x*1000000,y*1000 FROM xy_values_tof where measurement = 245")
+cursor.execute("SELECT x*1000000,y*1000 FROM xy_values_tof where measurement = 427")
 Data = np.array(cursor.fetchall())
 
 masses = []
-masses.append(['OH',12.418,6])
-masses.append(['NH3',12.427,6])
+masses.append(['OH',12.413,6])
+masses.append(['NH3',12.424,6])
 
 fit = []
 
@@ -91,15 +91,15 @@ axis.tick_params(direction='in', length=2, width=1, colors='k',labelsize=8,axis=
 axis.set_yticks((20,40,60))    
 axis.set_xticks((12.41,12.42,12.43,12.44))    
 axis.ticklabel_format(useOffset=False)
-axis.set_xlim(12.405,12.44)
+axis.set_xlim(12.405,12.435)
 axis.set_ylabel('Response / mV', fontsize=8)
 axis.set_xlabel('Flight Time / $\mu$s', fontsize=8)
 
 
 arrow = dict(facecolor='black',arrowstyle='->')
 font = 8
-axis.annotate('OH', xy=(12.416, 60),  xycoords='data', xytext=(12.41, 50), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
-axis.annotate('NH$_3$', xy=(12.428, 40),  xycoords='data', xytext=(12.433, 50), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
+axis.annotate('OH', xy=(12.413, 60),  xycoords='data', xytext=(12.408, 50), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
+axis.annotate('NH$_3$', xy=(12.426, 40),  xycoords='data', xytext=(12.431, 50), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
 
 
 

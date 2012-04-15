@@ -16,19 +16,19 @@ except:
 
 cursor = db.cursor()
 
-#SOMETHING WRONG WITH THE X-SCALE!!!!
+#Mass of NH3: 17.0265491
+#Mass of OH: 17.0027397
 
-#Mass of methanol: 32.0262147
-#Mass of oxygen: 31.9898292
+#Correct this expression to spectrum 403
 def MassToTime(mass):
-    time = 2.9870925856 * (mass**0.497621653202)
-    corr_time = time + 0.207
-    return corr_time
+    time = 2.98660484819 * (mass**0.4977024241071)
+    corr_time = time + 0.153
+    return corr_time 
 
 
 data = {}
 #Methanol + oxygen
-cursor.execute("SELECT x*1000000,y*1000 FROM xy_values_tof where measurement = 170")
+cursor.execute("SELECT x*1000000,y*1000 FROM xy_values_tof where measurement = 427")
 data['ch'] = np.array(cursor.fetchall())
 
 axis_array = []
@@ -61,20 +61,18 @@ mass_ticks = np.array([1,5,10,15,20,25,30,35,40])
 axis3 = axis.twiny()
 #axis3.plot(data['ch'][:,0],data['ch'][:,0]*0,'w-',linewidth=0) #Hack to create an invisible set on the extra x-axis
 axis3.set_xlim(0,20)
-print MassToTime(32.0262147)
+print MassToTime(2*1.0078250320)
 axis3.set_xticks(MassToTime(mass_ticks))
 axis3.set_xticklabels(mass_ticks)
 axis3.set_xlabel('Mass / amu', fontsize=8)
 axis3.tick_params(direction='in', length=2, width=1, colors='k',labelsize=8,axis='both',pad=3)
 #axis3.ticklabel_format(useOffset=False)
 
-axis.set_ylim(0,20)
-axis3.set_ylim(0,20)
-
+axis.set_ylim(0,150)
 
 p = axis.axvspan(0, 1, facecolor='#26aaf7', alpha=0.25)
-p = axis.axvspan(12, 13, facecolor='#b6fa77', alpha=0.25)
-p = axis.axvspan(16.9, 17, facecolor='#4599a7', alpha=0.25)
+p = axis.axvspan(12.4, 12.45, facecolor='#b6fa77', alpha=0.25)
+p = axis.axvspan(15.75, 17.1, facecolor='#25dd37', alpha=0.25)
 
 axis.tick_params(direction='in', length=6, width=1, colors='k',labelsize=8,axis='both',pad=3)
 axis.set_ylabel('Response / mV', fontsize=8)
@@ -89,39 +87,39 @@ axis.set_yticks((0,10,20,30,40))
 axis.plot(data['ch'][:,0], data['ch'][:,1], 'r-',linewidth=LINEWIDTH)
 p = axis.axvspan(0, 1, facecolor='#26aaf7', alpha=0.25)
 axis.set_xlim(0,1)
-axis.set_ylim(0,40)
+axis.set_ylim(0,150)
 axis.set_xticks([0.2,0.4,0.6,0.8])
 axis.tick_params(direction='in', length=6, width=1, colors='k',labelsize=8,axis='both',pad=3)
 
 
 axis = plt.subplot(gs[1,1])
 axis.set_ylabel('')
-axis.set_yticks((0,1,2,3,4))
+axis.set_yticks((25,50,75,100,125))
 #axis.set_xticks((12,12.5))
 axis.plot(data['ch'][:,0], data['ch'][:,1], 'r-',linewidth=LINEWIDTH)
-axis.set_xlim(12,13)
-axis.set_ylim(0,4)
-axis.set_xticks([12.2,12.4,12.6,12.8])
+axis.set_xlim(12.4,12.45)
+axis.set_ylim(0,150)
+axis.set_xticks([12.4,12.425,12.45])
 axis.set_xlabel('Flight Time / $\mu$s', fontsize=8)
-p = axis.axvspan(11.45, 13, facecolor='#b6fa77', alpha=0.25)
+axis.ticklabel_format(useOffset=False)
+p = axis.axvspan(12.4, 12.45, facecolor='#b6fa77', alpha=0.25)
 axis.tick_params(direction='in', length=6, width=1, colors='k',labelsize=8,axis='both',pad=3)
-axis.annotate('H$_2$O', xy=(12.75, 2.3),  xycoords='data', xytext=(12.65, 3.3), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
-axis.annotate('OH', xy=(12.4, 1),  xycoords='data', xytext=(12.7, 1.8), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
-axis.annotate('O', xy=(12.05, 0.9),  xycoords='data', xytext=(12.26, 1.4), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
+axis.annotate('OH', xy=(12.4144, 50),  xycoords='data', xytext=(12.42, 60), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
+axis.annotate('NH$_3$', xy=(12.43, 70),  xycoords='data', xytext=(12.43, 80), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
 
 
 axis = plt.subplot(gs[1,2])
 axis.set_ylabel('')
-axis.set_yticks((0,1,2,3,4))
-axis.set_xticks((16.95,16.97,16.99))
+axis.set_yticks((25,50,75,100,125))
+axis.set_xticks((15.75,16,17))
 axis.plot(data['ch'][:,0], data['ch'][:,1], 'r-',linewidth=LINEWIDTH)
-p = axis.axvspan(16.94, 17, facecolor='#4599a7', alpha=0.25)
-axis.set_xlim(16.94,17)
-axis.set_ylim(0,4)
+p = axis.axvspan(15.75, 17.1, facecolor='#25dd37', alpha=0.25)
+axis.set_xlim(15.75,17.1)
+axis.set_ylim(0,150)
 axis.tick_params(direction='in', length=6, width=1, colors='k',labelsize=8,axis='both',pad=3)
 axis.ticklabel_format(useOffset=False)
-axis.annotate('O$_2$', xy=(16.963, 2),  xycoords='data', xytext=(16.95, 3), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
-axis.annotate('CH$_3$OH', xy=(16.977, 1.2),  xycoords='data', xytext=(16.995, 2.4), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
+axis.annotate('O$_2$', xy=(16.963, 20),  xycoords='data', xytext=(16.95, 30), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
+axis.annotate('N$_2$', xy=(15.882, 10),  xycoords='data', xytext=(16, 20), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
 
 
 
