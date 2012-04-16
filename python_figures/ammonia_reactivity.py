@@ -106,7 +106,7 @@ for mass in config.masses:
     axis.plot(treated_data[mass[0]][:,2],treated_data[mass[0]][:,1], colors[i],label=mass[0],markersize=0.75)
     i = i + 1
 
-axis.set_xlabel('Time / min', fontsize=8)
+axis.set_xlabel('Time / min.', fontsize=8)
 axis.set_ylabel('Response / mV$\cdot$s', fontsize=8)
 
 
@@ -117,13 +117,13 @@ font = 8
 axis.annotate('H$_2$O', xy=(165, 2.3),  xycoords='data', xytext=(220, 2.8), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
 axis.annotate('N$_2$', xy=(205, 1.5),  xycoords='data', xytext=(190, 2.1), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
 axis.annotate('NH$_3$', xy=(50, 2.45),  xycoords='data', xytext=(55, 3), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
-axis.annotate('OH', xy=(105, 0.16),  xycoords='data', xytext=(145, 0.4), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
+axis.annotate('OH', xy=(95, 0.16),  xycoords='data', xytext=(145, 0.4), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
 axis.annotate('O$_2$', xy=(105, 1.0),  xycoords='data', xytext=(95, 1.55), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
-axis.annotate('Temp', xy=(150, 3.1),  xycoords='data', xytext=(140, 3.6), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
+axis.annotate('Temp.', xy=(150, 3.1),  xycoords='data', xytext=(140, 3.6), textcoords='data', arrowprops=arrow, horizontalalignment='right', verticalalignment='top',fontsize=font,)
 
 axis2 = axis.twinx()
 axis2.plot(treated_data[mass[0]][:,2],treated_data[mass[0]][:,0], 'k-',label='Temperature')
-axis2.set_ylabel('Temperature / C', fontsize=8)
+axis2.set_ylabel('Temperature / $^{\circ}$C', fontsize=8)
 axis2.set_yticks((110,130,150,170,190,210))
 
 axis.tick_params(direction='in', length=6, width=1, colors='k',labelsize=8,axis='both',pad=3)
