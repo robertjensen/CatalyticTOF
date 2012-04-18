@@ -13,7 +13,7 @@
    version="1.1"
    inkscape:export-ydpi="300"
    inkscape:export-xdpi="300"
-   inkscape:export-filename="/home/thomas/Documents/CINF/microreactor/articles/CatalyticTOF/TOF_microreactor.png"
+   inkscape:export-filename="/home/robertj/Documents/git/CatalyticTOF/TOF_microreactor.png"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
    sodipodi:docname="TOF_microreactor.svg"
    inkscape:version="0.48.1 r9760"
@@ -37,9 +37,9 @@
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1680"
-     inkscape:window-height="992"
-     inkscape:window-x="1280"
+     inkscape:window-width="1280"
+     inkscape:window-height="966"
+     inkscape:window-x="0"
      inkscape:window-y="26"
      inkscape:window-maximized="1" />
   <defs
@@ -918,7 +918,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -2149,7 +2149,7 @@
        sodipodi:cy="609.03711"
        sodipodi:rx="29.698484"
        sodipodi:ry="29.698484"
-       d="m 504.87424,609.03711 a 29.698484,29.698484 0 1 1 -59.39697,0 29.698484,29.698484 0 1 1 59.39697,0 z"
+       d="m 504.87424,609.03711 c 0,16.40202 -13.29647,29.69848 -29.69849,29.69848 -16.40202,0 -29.69848,-13.29646 -29.69848,-29.69848 0,-16.40202 13.29646,-29.69849 29.69848,-29.69849 16.40202,0 29.69849,13.29647 29.69849,29.69849 z"
        transform="matrix(0.86700266,0,0,0.8804937,205.79004,255.02161)" />
     <path
        inkscape:connector-curvature="0"
@@ -13289,10 +13289,10 @@
        x="232.61456"
        y="623.22681" />
     <rect
-       style="fill:none;stroke:#ff0000;stroke-width:1.98880327;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:7.95521332, 7.95521332;stroke-dashoffset:0;display:inline"
+       style="fill:none;stroke:#ff0000;stroke-width:2.03643489;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:8.14573969, 8.14573969;stroke-dashoffset:0;display:inline"
        id="rect6564-3-9"
        width="662.99487"
-       height="163.79877"
+       height="171.73865"
        x="220.10057"
        y="700.49231" />
     <text
@@ -13500,8 +13500,32 @@
        sodipodi:cy="609.03711"
        sodipodi:rx="29.698484"
        sodipodi:ry="29.698484"
-       d="m 504.87424,609.03711 a 29.698484,29.698484 0 1 1 -59.39697,0 29.698484,29.698484 0 1 1 59.39697,0 z"
+       d="m 504.87424,609.03711 c 0,16.40202 -13.29647,29.69848 -29.69849,29.69848 -16.40202,0 -29.69848,-13.29646 -29.69848,-29.69848 0,-16.40202 13.29646,-29.69849 29.69848,-29.69849 16.40202,0 29.69849,13.29647 29.69849,29.69849 z"
        transform="matrix(1.0801645,0,0,1.0969725,104.50068,123.48925)" />
+    <text
+       xml:space="preserve"
+       style="font-size:20.22693634px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Sans"
+       x="479.13071"
+       y="785.99396"
+       id="text5723-5-1-1-8-9-5"
+       sodipodi:linespacing="125%"
+       transform="scale(0.90859672,1.1005983)"><tspan
+         sodipodi:role="line"
+         id="tspan5725-1-3-9-0-4-6"
+         x="479.13071"
+         y="785.99396">MCP</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20.22693634px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Sans"
+       x="791.89508"
+       y="786.17175"
+       id="text5723-5-1-1-8-9-5-4"
+       sodipodi:linespacing="125%"
+       transform="scale(0.90859672,1.1005983)"><tspan
+         sodipodi:role="line"
+         id="tspan5725-1-3-9-0-4-6-4"
+         x="791.89508"
+         y="786.17175">Reflectron</tspan></text>
   </g>
   <path
      inkscape:connector-curvature="0"
