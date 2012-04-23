@@ -94,7 +94,7 @@ fig = plt.figure()
 fig.subplots_adjust(bottom=0.15) # Make room for x-label
 fig.subplots_adjust(right=0.85) # Make room for x-label
 ratio = 0.7                     # This figure should be very wide to span two columns
-fig_width = 9
+fig_width = 8.5
 fig_width = fig_width /2.54     # width in cm converted to inches
 fig_height = fig_width*ratio
 fig.set_size_inches(fig_width,fig_height)
