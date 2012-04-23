@@ -24,7 +24,7 @@ except:
 cursor = db.cursor()
 
 fig = plt.figure()
-fig.subplots_adjust(bottom=0.2) # Make room for x-label
+fig.subplots_adjust(bottom=0.22) # Make room for x-label
 fig.subplots_adjust(top=0.8) # Make room for extra x-label
 ratio = 0.4                     # This figure should be very wide to span two columns
 fig_width = 8.5
@@ -114,4 +114,4 @@ axis3.ticklabel_format(useOffset=False)
 
 #plt.tight_layout()
 #plt.show()
-plt.savefig('../ammonia_OH_gauss_fit.png',dpi=300)
+plt.savefig('../ammonia_OH_gauss_fit.png',dpi=600)
