@@ -115,4 +115,4 @@ axis.set_yticks((25,50,75,100,125))
 
 #plt.tight_layout()
 #plt.show()
-plt.savefig('../ammonia_OH_gauss_fit.png',dpi=600)
+plt.savefig('../ammonia_OH_gauss_fit.eps',dpi=600)

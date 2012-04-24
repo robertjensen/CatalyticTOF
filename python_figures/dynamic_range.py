@@ -118,5 +118,5 @@ for mass in masses:
 
 #plt.tight_layout()
 #plt.show()
-plt.savefig('../dynamic_range.png',dpi=600)
+plt.savefig('../dynamic_range.eps',dpi=600)
 
