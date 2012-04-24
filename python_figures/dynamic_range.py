@@ -37,9 +37,9 @@ cursor.execute("SELECT x*1000000,y*1000 FROM xy_values_tof where measurement = 2
 Data = np.array(cursor.fetchall())
 
 masses = []
-masses.append(['H$_2$O',12.777,8])
-masses.append(['H$_2$',4.387,8])
-masses.append(['O$_2$',16.972,8])
+masses.append(['H$_2$O',12.777,8,'a)'])
+masses.append(['H$_2$',4.387,8,'b)'])
+masses.append(['O$_2$',16.972,8,'c)'])
 
 x_ticks = []
 y_ticks = []
@@ -93,8 +93,10 @@ for mass in masses:
     axis.set_xticks([])
     axis.set_yticks(y_ticks[i-1])
     axis.set_xlim(mass[1]-0.013,mass[1]+0.013)
-    axis.annotate(mass[0], (0.13,0.9),xycoords='axes fraction',fontsize=8)
-    axis.annotate(str(round(signal,3)), (0.13,0.8),xycoords='axes fraction',fontsize=8)
+    #axis.annotate(mass[0], (0.13,0.9),xycoords='axes fraction',fontsize=8)
+    axis.annotate(mass[3], (0.13,0.9),xycoords='axes fraction',fontsize=8)
+    #axis.annotate(str(round(signal,3)), (0.13,0.8),xycoords='axes fraction',fontsize=8)
+    print signal
     if i==1:
         axis.set_ylabel('Response / mV', fontsize=8)    
 
@@ -107,7 +109,7 @@ for mass in masses:
     axis.set_yticks([-15,0,15,30])
     axis.set_xlim(mass[1]-0.013,mass[1]+0.013)
     if i==1:
-        axis.set_ylabel('Normalized Error', fontsize=8)    
+        axis.set_ylabel('Norm. Error', fontsize=8)    
     if i==2:
         axis.set_xlabel('Flight Time / $\mu$s', fontsize=8)    
     axis.tick_params(direction='in', length=2, width=1, colors='k',labelsize=8,axis='both',pad=3)

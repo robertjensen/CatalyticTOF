@@ -107,7 +107,7 @@ for mass in config.masses:
     i = i + 1
 
 axis.set_xlabel('Time / min.', fontsize=8)
-axis.set_ylabel('Response / mV$\cdot$s', fontsize=8)
+axis.set_ylabel('Response / mV$\cdot\mu$s', fontsize=8)
 
 
 axis.set_yticks((0.5,1,1.5,2,2.5,3,3.5))

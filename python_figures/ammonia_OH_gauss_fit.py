@@ -88,7 +88,6 @@ for mass in masses:
 axis.plot(X_range,fit[0]+fit[1],'g-',linewidth=0.5)
 axis.plot(X_values,Y_values,'b.',markersize=1.5)
 axis.tick_params(direction='in', length=2, width=1, colors='k',labelsize=8,axis='both',pad=3)
-axis.set_yticks((20,40,60))    
 axis.set_xticks((12.41,12.42,12.43,12.44))    
 axis.ticklabel_format(useOffset=False)
 axis.set_xlim(12.405,12.435)
@@ -111,6 +110,8 @@ axis3.set_xlabel('Mass / amu', fontsize=8)
 axis3.tick_params(direction='in', length=2, width=1, colors='k',labelsize=8,axis='both',pad=3)
 axis3.ticklabel_format(useOffset=False)
 
+axis.set_yticks((25,50,75,100,125))    
+#axis3.set_yticks((20,40,60))    
 
 #plt.tight_layout()
 #plt.show()

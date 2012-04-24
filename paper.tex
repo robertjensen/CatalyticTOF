@@ -77,7 +77,7 @@ The setup consists of three main components. The microreactor, where the catalys
 
 The catalyst under investigation is deposited in the microreactor reactor volume by e.g. evaporation\cite{Henriksen2009}, drop casting\cite{Vesborg2010} or gas aggregation formed size-selected nanoparticles. The gas composition in the microreactor reactor volume is ionized by the modified ion gauge  and is subsequently focused by the Einzel lenses into the source region. From the source region the ions are pushed into the flight tube by a repelling voltage pulse and is after mass separation in the flight tube detected by a MCP. A schematic of the entire setup is shown in Figure~\ref{fig:TOF_microreactor}.
 \begin{figure}
- \includegraphics[width=14cm]{TOF_microreactor.png}%
+ \includegraphics[width=17cm]{TOF_microreactor.png}%
  \caption{Schematic of the total system (not to scale). The capillary outlet from the microreactor can be directed to either a QMS or the TOF-MS. For measurements by the TOF-MS the gas is fed into a modified ion gauge which ionizes the gas. The ionized gas hereafter enters the TOF-MS through a series of Einzel lenses from where they are pushed into the flight tube by a repelling voltage, V$_p$. Ions are separated in the field free region and focused by the reflectron. The ions are subsequently detected by the MCP.\label{fig:TOF_microreactor}}%
 \end{figure}
 
@@ -96,15 +96,15 @@ The time of flight equipment used for detection of gas molecules flown through t
 
 Ions enter the source region of the TOF-MS through a series of entry Einzel lenses used for focusing the beam hence minimizing divergence. In the source the beam is pushed into the flight tube by an initial repelling push voltage, $V_p$. The ions are hereafter further accelerated from ground potential to the liner potential, $V_L$. Using this setup the drift velocity of an ion starting exactly from the center of the acceleration region corresponds to an energy of $Ze\left(V_L + V_p/2\right)$ where $Ze$ is the charge of the ion. At the end of the flight tube a reflectron is installed. The reflectron is controlled by voltages $V_{R1}$ and $V_{R2}$. The reflectron has two primary purposes: i) The effective drift length is increased hence increasing the resolution of the TOF-MS. ii) The reflectron works as a focusing lens (cf. Figure~\ref{fig:trajectory}) compensating for any initial velocity dispersion of the ions, i.e. ions with an initial higher velocity will have an increased flight length compared to slower ions. The MCP used for ion detection is placed in the focal point of the reflectron giving maximum compensation for initial velocity dispersion. According to the manufacturer a resolution $m/\Delta m\gtrsim4000$ of the TOF-MS has been shown.
 \begin{figure}
- \includegraphics[width=14cm]{trajectory.png}%
- \caption{Simulated trajectories of ions with initial position variations in the source region illustrating the focusing effect of the reflectron. Red curve corresponds to ions with an initial position in the center of the source region while blue and green curves illustrate trajectories of ions with non-ideal initial positions displaced 6.3\,mm towards and further away from the repelling plate, respectively. Insert shows the difference between displaced ions and the center positioned ion. The models does not include initial velocity dispersion of the ions.\label{fig:trajectory}}%
+ \includegraphics[width=8.5cm]{trajectory.png}%
+ \caption{Simulated trajectories of ions ($m/q=50$) with initial position variations in the source region illustrating the focusing effect of the reflectron. Red curve corresponds to ions with an initial position in the center of the source region while blue and green curves illustrate trajectories of ions with non-ideal initial positions displaced 6.3\,mm towards and further away from the repelling plate, respectively. Insert shows the difference between displaced ions and the center positioned ion. The models does not include initial velocity dispersion of the ions.\label{fig:trajectory}}%
 \end{figure}
 
 The prize of the TOF including ionization gauge, 8" 4-way cross, control electronics, data acquisition hardware and MCP detector is comparable to the prize of a high quality QMS with electronics making the TOF-MS a serious alternative to a QMS.
 
 In Figure~\ref{fig:untreated_data} an example spectrum of ammonia oxidation (NH$_3$:O$_2$ 4:3, 195\,$^{\circ}$C) is shown. Here the high resolution of the TOF-MS is demonstrated by resolving ammonia (NH$_3$) and hydroxyl (OH) which have a mass difference of 23\,milli-amu.
 \begin{figure}
- \includegraphics[width=16cm]{untreated_data.png}%
+ \includegraphics[width=17cm]{untreated_data.png}%
  \caption{Raw data acquired from the TOF-MS during NH$_3$ oxidation by O$_2$ (NH$_3$:O$_2$ 4:3, 195\,$^{\circ}$C). Subfigures show three different regions of the spectrum. From the first subfigure in the lower panel a delay between the acquisition trigger and the noise signal from the rise of the high voltage pulser of approximately 150\,ns can be seen. This is due to delays in cables and the repeller pulser. In the center subfigure the extremely good separation between individual masses is shown. It is evident that 1\,amu corresponds to approximately 1.4\,$\mu$s difference in flight time in our system in the mass regime around 1\,amu. In the last subfigure a zoom of the ammonia and hydroxyl peaks region shows separation between OH and NH$_3$ as well as O and NH$_2$  (23\,milli-amu mass difference).\label{fig:untreated_data}}%
 \end{figure}
 
@@ -114,20 +114,27 @@ As ionization source of the gas flow from the microreactor capillary a modified 
 \subsubsection{Data treatment}
 Raw data plotted with accompanying gaussian fits are shown in Figure~\ref{fig:gaussian_fit}. Here the closely lying peaks from OH due to cracking of both residue water and water as reaction product and uncombusted NH$_3$ is shown. The ability to separate these contributions substantially simplifies quantification of ammonia and allows for easier characterization of catalyst performance. 
 \begin{figure}
- \includegraphics[width=14cm]{ammonia_OH_gauss_fit.png}%
+ \includegraphics[width=8.5cm]{ammonia_OH_gauss_fit.png}%
  \caption{Example of two gaussian fits (dashed red lines) and the sum of the two fits (green solid line) to a double peak (blue dots) consisting of NH$_{3}$ and OH both at approximately 17\,amu demonstrating the resolution of the TOF-MS. The entire graph section represents a mass difference of 100\,milli-amu.\label{fig:gaussian_fit}}%
 \end{figure}
 
 In Figure~\ref{fig:dynamic_range} raw data from water, hydrogen and oxygen from three different regions are shown illustrating the dynamic range of the TOF-MS. At constant MCP voltage all the peaks are clearly visible although the ratio of the oxygen to water amplitude is $\sim$400. 
 \begin{figure}
- \includegraphics[width=14cm]{dynamic_range.png}%
- \caption{Gaussian fits (red solid line) to three different mass to charge ratios (blue points) from the same mass spectrum (integrated area indicated in each panel). As seen from the response a high dynamic range of the TOF-MS is demonstrated by good gaussian fits to all peaks. The TOF-MS can hence be used to monitor both very small and very large signal masses. At the bottom panel the area normalized error for each fit shows that the relative fit error is independent of the total peak area.\label{fig:dynamic_range}}%
+ \includegraphics[width=8.5cm]{dynamic_range.png}%
+ \caption{Gaussian fits (red solid line) to three different mass to charge
+ ratios (blue points) from the same mass spectrum. In panels a), b) and c) the H$_2$O (peak area: 2.35\,mV$\cdot\mu$s), H$_2$ (peak area: $5.43\times10^{-2}$\,mV$\cdot\mu$s) and O$_2$ (peak area: $4.24\times10^{-3}$\,mV$\cdot\mu$s) signals are shown, respectively. As seen from the
+ response a high dynamic range of the TOF-MS is demonstrated by good gaussian
+ fits to all peaks. The TOF-MS can hence be used to monitor both very small and
+ very large signal masses. At the bottom panel the area normalized error for
+ each fit shows that the relative fit error is independent of the total peak
+ area.\label{fig:dynamic_range}}%
+
 \end{figure}
 In reality the dynamic range is limited mostly by the data acquisition hardware as well as the quality of the ion source. Even with the home-built ionization source and a 8-bit digitizer the dynamic range is, from Figure~\ref{fig:dynamic_range}, estimated to $\sim1000$ using an integration time of $\sim5$\,s. The dynamic range of the TOF-MS is hence comparable to the dynamic range offered by a QMS at constant preamplifier range while covering a much larger mass range. The TOF-MS, however, acquires mass spectra (\mbox{0--5000}\,amu) at high frequency ($>1$\,Hz) which is impossible with a QMS where only a few masses can be followed as a function of time to increase time resolution. The possibility of fast acquisition of complete mass spectra by the TOF-MS thus ensures that all masses are monitored simultaneously during the experiment. The problem of selecting appropriate masses for logging by the QMS is hence eliminated.
 
 Since the TOF-MS only measures flight time and not the actual mass of the measured ions it is necessary to determine the relationship between flight time and actual mass. This can be done by calibration masses expressing known patterns in the mass spectrum. In this way masses can be reasonably well determined with subsequent fitting of these values to get an expression for the flight time as a function of mass. This approach is in some cases adequate but has the significant drawback that several peaks of well known masses must be present in the flight spectrum which is not always necessarily feasible. To determine the relationship between mass and flight time we have made a numeric model of the TOF-MS which calculates the flight time based only on the voltages for the pulser, $V_p$, liner, $V_L$, and reflectron, $V_{R1}$ and $V_{R2}$, and thus provides a relationship of flight time to mass. Typically, the model is used together with the experimental determination of a single mass since this will help fix the unknown delays originating from the measurement trigger, rise time of the high-voltage pulse at the repeller plate and cable delays. As seen in Figure~\ref{fig:model_error} the performance of the model is good despite its simplicity giving a total error in flight time estimation of $\sim$10\,ns corresponding to $\sim$50\,milli-amu at 70\,amu. The model is written in Python and can be acquired online\cite{ModelGithub}.
 \begin{figure}
- \includegraphics[width=14cm]{model_error.png}%
+ \includegraphics[width=8.5cm]{model_error.png}%
  \caption{Comparison of the simulated model (red curve, top panel) to actual measured experimental values (blue dots) of flight time as a function of mass. In the lower panels the difference between acquired experimental data and data calculated from the model in time and mass units are shown. Error bars represents only the uncertainty in the experimental data. As seen from the lower panels a deviation of $\sim$10\,ns corresponding to $\sim$50\,milli-amu at 70\,amu is present.\label{fig:model_error}}%
 \end{figure}
 
@@ -147,7 +154,7 @@ All of these systems are difficult to analyze both qualitatively and quantitativ
 
 At experiment start the microreactor is equilibrated with NH$_3$ and O$_2$ in a 4:3 ratio corresponding to stoichiometry for this reaction. After equilibration the temperature is increased in steps of 2.5\,$^{\circ}$C from 150\,$^{\circ}$C to 215\,$^{\circ}$C. The gas composition in the microreactor is continuously probed by the TOF-MS which is connected to the capillary of the microreactor.
 \begin{figure}
- \includegraphics[width=14cm]{ammonia_reactivity.png}%
+ \includegraphics[width=8.5cm]{ammonia_reactivity.png}%
  \caption{Ammonia oxidation as a function of temperature on a 1\,\% geometrical coverage Pt thin film. As the temperature is increased ammonia is oxidized to H$_2$O and N$_2$. Furthermore, the OH and NH$_3$ signals are anticorrelated demonstrating the ability to resolve these two close lying masses as shown in Figure~\ref{fig:gaussian_fit}.\label{fig:ammonia_reactivity}}%
 \end{figure}
 In Figure~\ref{fig:ammonia_reactivity} the integrated N$_2$, NH$_3$, H$_2$O, O$_2$ and OH peaks acquired from the raw TOF-MS spectrum as a function of temperature are shown. At each individual temperature step a mass scan is performed from triggering of the acceleration pulse up to 25\,$\mu s$ of flight time corresponding to 70\,amu. As seen from Figure~\ref{fig:ammonia_reactivity} the combustion of NH$_3$ increases substantially at approximately 200\,$^{\circ}$C and drops again at approximately 175\,$^{\circ}$C. The combustion of ammonia to molecular nitrogen and water in this temperature range agrees well with literature\cite{Imbihl2007,Zeng2009}. 
