@@ -133,4 +133,4 @@ axis2.tick_params(direction='in', length=6, width=1, colors='k',labelsize=8,axis
 
 #plt.tight_layout()
 plt.show()
-plt.savefig('../ammonia_reactivity.png',dpi=300)
+plt.savefig('../ammonia_reactivity.png',dpi=600)

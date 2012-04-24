@@ -25,7 +25,7 @@ cursor = db.cursor()
 
 fig = plt.figure()
 fig.subplots_adjust(bottom=0.22) # Make room for x-label
-fig.subplots_adjust(top=0.8) # Make room for extra x-label
+fig.subplots_adjust(top=0.79) # Make room for extra x-label
 ratio = 0.4                     # This figure should be very wide to span two columns
 fig_width = 8.5
 fig_width = fig_width /2.54     # width in cm converted to inches

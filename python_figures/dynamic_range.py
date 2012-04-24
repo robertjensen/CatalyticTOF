@@ -21,7 +21,7 @@ cursor = db.cursor()
 fig = plt.figure()
 fig.subplots_adjust(bottom=0.2) # Make room for x-label
 fig.subplots_adjust(top=0.9) # Make room for extra x-label
-fig.subplots_adjust(wspace=0.25)
+fig.subplots_adjust(wspace=0.4)
 fig.subplots_adjust(hspace=0.25)
 ratio = 0.6
 fig_width = 8.5
@@ -43,12 +43,15 @@ masses.append(['O$_2$',16.972,8])
 
 x_ticks = []
 y_ticks = []
-x_ticks.append([12.767,12.777,12.787])
-x_ticks.append([4.377,4.387,4.397])
-x_ticks.append([16.962,16.972,16.982])
-y_ticks.append([100,200,300,400])
-y_ticks.append([5,10,15])
-y_ticks.append([0.2,0.4,0.6])
+#x_ticks.append([12.767,12.777,12.787])
+#x_ticks.append([4.377,4.387,4.397])
+#x_ticks.append([16.962,16.972,16.982])
+x_ticks.append([12.767,12.787])
+x_ticks.append([4.377,4.397])
+x_ticks.append([16.962,16.982])
+y_ticks.append([0,100,200,300,400])
+y_ticks.append([0,5,10,15])
+y_ticks.append([0,0.2,0.4,0.6])
 
 fit = []
 
@@ -113,5 +116,5 @@ for mass in masses:
 
 #plt.tight_layout()
 #plt.show()
-plt.savefig('../dynamic_range.png',dpi=300)
+plt.savefig('../dynamic_range.png',dpi=600)
 
