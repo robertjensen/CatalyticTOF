@@ -11,9 +11,9 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
-   inkscape:export-ydpi="300"
-   inkscape:export-xdpi="300"
-   inkscape:export-filename="/home/robertj/Documents/git/CatalyticTOF/TOF_microreactor.png"
+   inkscape:export-ydpi="600"
+   inkscape:export-xdpi="600"
+   inkscape:export-filename="/home/thomas/Documents/CINF/microreactors/articles/CatalyticTOF/TOF_microreactor.png"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
    sodipodi:docname="TOF_microreactor.svg"
    inkscape:version="0.48.1 r9760"
@@ -918,7 +918,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
