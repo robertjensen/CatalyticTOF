@@ -128,4 +128,4 @@ axis.annotate('NH$_3$', xy=(12.425, 85),  xycoords='data', xytext=(12.35, 130), 
 
 #plt.tight_layout()
 plt.show()
-plt.savefig('../untreated_data.png',dpi=600)
+plt.savefig('../untreated_data.png',dpi=1200)
